@@ -1,88 +1,463 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CRO Labs | IT & Tourism Solutions</title>
-  <meta name="description" content="CRO Labs builds websites, software, and AI integrations for the tourism industry.">
+  <title>CRO Labs | Esperienze digitali per turismo, web e gaming</title>
+  <meta name="description" content="CRO Labs crea prodotti digitali, siti web e soluzioni software. Scopri Tiberia, guida interattiva per Capri, e GangEmpire, un progetto gaming online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #0a1220;
-      --surface: #13233d;
-      --text: #f4f8ff;
-      --muted: #b2c2de;
-      --accent: #4fc3f7;
+      --bg: #07111f;
+      --bg-soft: #0f2034;
+      --surface: rgba(14, 29, 47, 0.82);
+      --surface-strong: rgba(18, 39, 63, 0.95);
+      --text: #f4f2ea;
+      --muted: #b4c4d4;
+      --accent: #f6b73c;
+      --accent-strong: #ff8a3d;
+      --line: rgba(255, 255, 255, 0.09);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+    * {
+      box-sizing: border-box;
     }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(160deg, var(--bg), #1f3b68);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(246, 183, 60, 0.18), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(68, 187, 164, 0.16), transparent 24%),
+        linear-gradient(160deg, var(--bg), var(--bg-soft) 55%, #15314a 100%);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(10px);
+    }
+    body::before {
+      width: 18rem;
+      height: 18rem;
+      top: 5rem;
+      right: -4rem;
+      background: rgba(255, 138, 61, 0.11);
+      border-radius: 50%;
+    }
+    body::after {
+      width: 22rem;
+      height: 22rem;
+      bottom: 2rem;
+      left: -6rem;
+      background: rgba(246, 183, 60, 0.08);
+      border-radius: 50%;
     }
     main {
-      max-width: 960px;
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 3rem 1.25rem;
+      padding: 2rem 1.25rem 4rem;
     }
-    h1, h2 {
-      margin: 0 0 .75rem;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .intro {
-      font-size: 1.1rem;
+    h1, h2, h3, p {
+      margin: 0;
+    }
+    .eyebrow,
+    .pill,
+    .project-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
       color: var(--muted);
-      max-width: 680px;
-      margin-bottom: 2rem;
     }
-    .grid {
+    .eyebrow {
+      padding: 0.55rem 0.9rem;
+      background: rgba(255, 255, 255, 0.04);
+      margin-bottom: 1.2rem;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem 0 3rem;
+    }
+    .hero-copy h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.04em;
+      max-width: 10ch;
+      margin-bottom: 1.25rem;
+    }
+    .hero-copy p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 63ch;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.6rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.35rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+    .button:hover {
+      transform: translateY(-2px);
+    }
+    .button-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #0b1422;
+      box-shadow: 0 18px 45px rgba(246, 183, 60, 0.25);
+    }
+    .button-secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .hero-panel {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+    .hero-stats {
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .card {
-      background: color-mix(in oklab, var(--surface), black 12%);
-      border: 1px solid color-mix(in oklab, var(--accent), transparent 70%);
-      border-radius: 12px;
+    .stat-card {
       padding: 1rem;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .stat-card strong {
+      display: block;
+      font-size: 1.85rem;
+      font-family: "Space Grotesk", sans-serif;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+    .stat-card span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .section {
+      margin-top: 2.2rem;
+      padding: 1.8rem;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(8, 18, 31, 0.46);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+    .section-heading h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      letter-spacing: -0.03em;
+    }
+    .section-heading p {
+      max-width: 54ch;
+      color: var(--muted);
+    }
+    .project-grid,
+    .service-grid,
+    .story-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .project-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .service-grid,
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .card,
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 24px;
+      padding: 1.35rem;
+    }
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent 35%);
+      pointer-events: none;
+    }
+    .project-tag,
+    .pill {
+      padding: 0.45rem 0.75rem;
+      background: rgba(255, 255, 255, 0.04);
+      margin-bottom: 1rem;
+    }
+    .project-card h3,
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.65rem;
+    }
+    .project-card p,
+    .card p,
+    .project-card li {
+      color: var(--muted);
+    }
+    .project-card ul {
+      margin: 1rem 0 0;
+      padding-left: 1.1rem;
+    }
+    .project-card li + li {
+      margin-top: 0.45rem;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .accent-block {
+      background: linear-gradient(135deg, rgba(246, 183, 60, 0.16), rgba(255, 138, 61, 0.08));
+      border-color: rgba(246, 183, 60, 0.22);
+    }
+    .accent-block p {
+      max-width: 60ch;
     }
     .cta {
-      margin-top: 2rem;
+      margin-top: 1.1rem;
       color: var(--muted);
     }
     strong {
       color: var(--accent);
     }
+    footer {
+      padding-top: 1.8rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.94rem;
+    }
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 1rem;
+      }
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 640px) {
+      main {
+        padding-inline: 1rem;
+      }
+      .hero-copy h1 {
+        max-width: none;
+      }
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+      .section {
+        padding: 1.25rem;
+        border-radius: 22px;
+      }
+    }
   </style>
 </head>
 <body>
   <main>
-    <header>
-      <h1>CRO Labs</h1>
-      <p class="intro">
-        This landing page presents our startup focused on <strong>IT and tourism</strong>, building digital products that help travel businesses grow.
-      </p>
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">CRO Labs · digital studio indipendente</span>
+        <h1>Costruiamo prodotti online con un'identita chiara.</h1>
+        <p>
+          CRO Labs nasce per unire <strong>sviluppo software</strong>, design utile e visione imprenditoriale.
+          Lavoriamo su progetti proprietari e prodotti digitali che parlano a settori diversi, dal turismo esperienziale al gaming online.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#progetti">Scopri i progetti</a>
+          <a class="button button-secondary" href="#studio">Cosa stiamo costruendo</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Panoramica CRO Labs">
+        <div class="hero-stats">
+          <div class="stat-card">
+            <strong>2</strong>
+            <span>progetti gia in sviluppo</span>
+          </div>
+          <div class="stat-card">
+            <strong>3</strong>
+            <span>aree chiave: turismo, web, gaming</span>
+          </div>
+          <div class="stat-card">
+            <strong>1</strong>
+            <span>studio focalizzato su prodotti propri</span>
+          </div>
+          <div class="stat-card">
+            <strong>100%</strong>
+            <span>approccio pratico, digitale e orientato al lancio</span>
+          </div>
+        </div>
+      </aside>
     </header>
 
-    <section aria-label="Services">
-      <h2>What we do</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Software Development</h3>
-          <p>Custom software solutions built by experienced developers for modern tourism and hospitality needs.</p>
+    <section id="studio" class="section accent-block" aria-label="Visione studio">
+      <div class="section-heading">
+        <div>
+          <span class="pill">Direzione</span>
+          <h2>Un laboratorio piccolo, ma con ambizione concreta.</h2>
+        </div>
+        <p>
+          L'obiettivo non e creare un semplice sito vetrina, ma raccontare una realta che sta prendendo forma:
+          un laboratorio capace di progettare esperienze digitali, lanciare prodotti e testare idee con velocita.
+        </p>
+      </div>
+      <p class="cta">
+        CRO Labs si muove tra creativita, sviluppo e validazione reale: idee chiare, prodotto pubblicabile e attenzione al dettaglio visivo.
+      </p>
+    </section>
+
+    <section id="progetti" class="section" aria-label="Progetti in evidenza">
+      <div class="section-heading">
+        <div>
+          <span class="pill">Progetti live</span>
+          <h2>Due prodotti che mostrano bene la direzione del brand.</h2>
+        </div>
+        <p>
+          I primi progetti di CRO Labs sono diversi per tono e pubblico, ma condividono la stessa logica:
+          creare esperienze memorabili e trasformare un'idea in un prodotto con identita precisa.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <span class="project-tag">Tourism Experience</span>
+          <h3>Tiberia · tiberia.me</h3>
+          <p>
+            Una guida interattiva dedicata all'isola di Capri, pensata per offrire un modo piu coinvolgente di scoprire luoghi, esperienze e percorsi.
+          </p>
+          <ul>
+            <li>Approccio editoriale e digitale per valorizzare il territorio.</li>
+            <li>Navigazione intuitiva per utenti che cercano ispirazione e informazioni utili.</li>
+            <li>Potenziale forte per turismo locale, hospitality e servizi esperienziali.</li>
+          </ul>
+          <a class="project-link" href="https://tiberia.me" target="_blank" rel="noreferrer">Visita tiberia.me</a>
         </article>
-        <article class="card">
-          <h3>Web Site Creation</h3>
-          <p>Fast, responsive websites designed to convert visitors into bookings and long-term customers.</p>
-        </article>
-        <article class="card">
-          <h3>AI Integration</h3>
-          <p>Practical AI tools such as smart assistants, automation, and personalized recommendations.</p>
+
+        <article class="project-card">
+          <span class="project-tag">Gaming Project</span>
+          <h3>GangEmpire · gangempire.com</h3>
+          <p>
+            Un progetto gaming con un'identita piu diretta e competitiva, costruito per intrattenere, coinvolgere e sviluppare una community attorno al gioco.
+          </p>
+          <ul>
+            <li>Branding piu aggressivo e orientato al coinvolgimento del pubblico.</li>
+            <li>Esperienza online pensata per trattenere l'utente e stimolare ritorno.</li>
+            <li>Un secondo asse strategico che mostra la versatilita dello studio.</li>
+          </ul>
+          <a class="project-link" href="https://gangempire.com" target="_blank" rel="noreferrer">Visita gangempire.com</a>
         </article>
       </div>
     </section>
 
-    <p class="cta">Let’s build the next generation of tourism experiences together.</p>
+    <section class="section" aria-label="Servizi e approccio">
+      <div class="section-heading">
+        <div>
+          <span class="pill">Cosa facciamo</span>
+          <h2>Servizi che nascono dalla pratica sui nostri prodotti.</h2>
+        </div>
+        <p>
+          Ogni progetto interno diventa anche un banco di prova: ci aiuta a definire processi, design, tono di voce e soluzioni tecniche da applicare altrove.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <article class="card">
+          <h3>Sviluppo web</h3>
+          <p>Siti e landing page veloci, responsive e pensati per raccontare bene un prodotto o convertire un interesse in contatto.</p>
+        </article>
+        <article class="card">
+          <h3>Prodotti digitali</h3>
+          <p>Progettazione di strumenti online con una struttura chiara, una UX pulita e una strategia orientata al rilascio.</p>
+        </article>
+        <article class="card">
+          <h3>Brand identity digitale</h3>
+          <p>Direzione visiva, tono e presenza online coerente per chi vuole apparire solido fin dal primo impatto.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Perche CRO Labs">
+      <div class="section-heading">
+        <div>
+          <span class="pill">Metodo</span>
+          <h2>Un progetto nuovo ha bisogno di narrazione, non solo di codice.</h2>
+        </div>
+        <p>
+          Per questo la landing racconta non solo cosa fai, ma dove stai andando: una base credibile per chi scopre il brand oggi e vuole seguirne la crescita.
+        </p>
+      </div>
+
+      <div class="story-grid">
+        <article class="card">
+          <h3>Visione</h3>
+          <p>Ogni progetto viene costruito con l'idea di diventare riconoscibile, non soltanto funzionale.</p>
+        </article>
+        <article class="card">
+          <h3>Esecuzione</h3>
+          <p>Design, contenuti e sviluppo vengono allineati per ottenere una presenza online piu matura fin da subito.</p>
+        </article>
+        <article class="card">
+          <h3>Crescita</h3>
+          <p>La landing puo evolvere insieme allo studio, aggiungendo case study, metriche, demo e nuovi lanci.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      CRO Labs sviluppa prodotti digitali con focus su turismo, esperienze online e nuove idee da portare sul mercato.
+    </footer>
   </main>
 </body>
 </html>
