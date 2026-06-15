@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CRO Labs | Esperienze digitali per turismo, web e gaming</title>
-  <meta name="description" content="CRO Labs crea prodotti digitali e software. Scopri Tiberia, assistente locale intelligente per Capri, e GangEmpire, un progetto gaming online.">
+  <title>CRO Labs | Startup tra turismo, hospitality e software</title>
+  <meta name="description" content="CRO Labs nasce dall'esperienza diretta nel turismo e nell'hospitality per creare prodotti software utili, accessibili e innovativi come Tiberia e GangEmpire.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -204,6 +204,11 @@
     .project-grid {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
+    .innovation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
     .service-grid,
     .story-grid {
       display: grid;
@@ -257,6 +262,21 @@
       font-weight: 700;
       color: var(--accent);
     }
+    .innovation-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    }
+    .innovation-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.45rem;
+    }
+    .innovation-card ul {
+      margin: 1rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+    .innovation-card li + li {
+      margin-top: 0.45rem;
+    }
     .accent-block {
       background: linear-gradient(135deg, rgba(246, 183, 60, 0.16), rgba(255, 138, 61, 0.08));
       border-color: rgba(246, 183, 60, 0.22);
@@ -308,15 +328,16 @@
   <main>
     <header class="hero">
       <div class="hero-copy">
-        <span class="eyebrow">CRO Labs · digital studio indipendente</span>
-        <h1>Costruiamo prodotti online con un'identita chiara.</h1>
+        <span class="eyebrow">CRO Labs · startup in costruzione</span>
+        <h1>Rendiamo semplici problemi che nel turismo restano ancora complicati.</h1>
         <p>
-          CRO Labs nasce per unire <strong>sviluppo software</strong>, design utile e visione imprenditoriale.
-          Lavoriamo su progetti proprietari e prodotti digitali che parlano a settori diversi, dal turismo esperienziale al gaming online.
+          CRO Labs nasce dalla mia esperienza diretta nel <strong>turismo e nell'ospitalita</strong>.
+          Vivendo in un territorio turistico ho visto da vicino code, barriere linguistiche, informazioni disperse e servizi poco fluidi.
+          Per questo sto unendo conoscenza del settore e sviluppo software per costruire prodotti digitali che rendano le cose difficili piu facili.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#progetti">Scopri i progetti</a>
-          <a class="button button-secondary" href="#studio">Cosa stiamo costruendo</a>
+          <a class="button button-secondary" href="#innovazione">Perche e innovativo</a>
         </div>
       </div>
 
@@ -324,19 +345,19 @@
         <div class="hero-stats">
           <div class="stat-card">
             <strong>2</strong>
-            <span>progetti gia in sviluppo</span>
-          </div>
-          <div class="stat-card">
-            <strong>3</strong>
-            <span>aree chiave: turismo, web, gaming</span>
+            <span>prodotti proprietari gia in sviluppo</span>
           </div>
           <div class="stat-card">
             <strong>1</strong>
-            <span>studio focalizzato su prodotti propri</span>
+            <span>radice chiara: esperienza reale nel settore hospitality</span>
+          </div>
+          <div class="stat-card">
+            <strong>2</strong>
+            <span>direzioni di prodotto: utilita locale e gaming esperienziale</span>
           </div>
           <div class="stat-card">
             <strong>100%</strong>
-            <span>approccio pratico, digitale e orientato al lancio</span>
+            <span>approccio pratico, orientato al lancio e alla chiarezza d'uso</span>
           </div>
         </div>
       </aside>
@@ -346,15 +367,15 @@
       <div class="section-heading">
         <div>
           <span class="pill">Direzione</span>
-          <h2>Un laboratorio piccolo, ma con ambizione concreta.</h2>
+          <h2>Una startup che parte dal territorio per costruire software utile.</h2>
         </div>
         <p>
-          L'obiettivo non e creare un semplice sito vetrina, ma raccontare una realta che sta prendendo forma:
-          un laboratorio capace di progettare esperienze digitali, lanciare prodotti e testare idee con velocita.
+          L'obiettivo non e aprire l'ennesimo studio generico, ma trasformare una conoscenza concreta del turismo,
+          dell'accoglienza e delle esigenze locali in prodotti digitali che migliorano davvero l'esperienza delle persone.
         </p>
       </div>
       <p class="cta">
-        CRO Labs si muove tra creativita, sviluppo e validazione reale: idee chiare, prodotto pubblicabile e attenzione al dettaglio visivo.
+        CRO Labs si muove tra osservazione reale, progettazione e rilascio: meno teoria astratta, piu strumenti pubblicabili con una funzione chiara.
       </p>
     </section>
 
@@ -362,17 +383,17 @@
       <div class="section-heading">
         <div>
           <span class="pill">Progetti live</span>
-          <h2>Due prodotti che mostrano bene la direzione del brand.</h2>
+          <h2>Due prodotti che mostrano come il software puo nascere da esigenze concrete.</h2>
         </div>
         <p>
-          I primi progetti di CRO Labs sono diversi per tono e pubblico, ma condividono la stessa logica:
-          creare esperienze memorabili e trasformare un'idea in un prodotto con identita precisa.
+          Tiberia e GangEmpire parlano a pubblici diversi, ma condividono lo stesso principio:
+          usare il digitale per creare esperienze piu chiare, piu coinvolgenti e meno standard.
         </p>
       </div>
 
       <div class="project-grid">
         <article class="project-card">
-          <span class="project-tag">Local Tourism Platform</span>
+          <span class="project-tag">Piattaforma locale per Capri</span>
           <h3>Tiberia · tiberia.me</h3>
           <p>
             Un assistente locale intelligente per Capri, pensato per aiutare visitatori e residenti con informazioni utili, servizi, eventi e suggerimenti personalizzati.
@@ -387,7 +408,7 @@
         </article>
 
         <article class="project-card">
-          <span class="project-tag">Gaming Project</span>
+          <span class="project-tag">Gaming geolocalizzato</span>
           <h3>GangEmpire · gangempire.com</h3>
           <p>
             Un gioco che usa una mappa reale come spazio di gioco, integrando punti di interesse, piazze e monumenti dentro un'esperienza piu immersiva e diversa dai soliti format gaming.
@@ -402,29 +423,67 @@
       </div>
     </section>
 
+    <section id="innovazione" class="section" aria-label="Perche e innovativo">
+      <div class="section-heading">
+        <div>
+          <span class="pill">Perche e innovativo</span>
+          <h2>Non aggiungiamo tecnologia a caso: la usiamo per semplificare esperienze reali.</h2>
+        </div>
+        <p>
+          L'innovazione qui non sta nel dire che un prodotto usa software o AI, ma nel modo in cui unisce contesto, utilita concreta e identita forte.
+        </p>
+      </div>
+
+      <div class="innovation-grid">
+        <article class="card innovation-card">
+          <h3>Tiberia</h3>
+          <p>
+            Tiberia nasce da problemi osservati sul campo: code, difficolta linguistiche, informazioni frammentate e poca personalizzazione nell'esperienza di chi vive o visita Capri.
+          </p>
+          <ul>
+            <li>Centralizza eventi, trasporti, meteo, notizie locali e servizi in un unico punto.</li>
+            <li>Aiuta visitatori, residenti e attivita locali con un'interazione piu semplice e contestuale.</li>
+            <li>Trasforma una guida statica in un assistente territoriale piu utile e continuo.</li>
+          </ul>
+        </article>
+
+        <article class="card innovation-card">
+          <h3>GangEmpire</h3>
+          <p>
+            GangEmpire prende una base reale e la trasforma in sistema di gioco: la mappa non e solo sfondo, ma parte attiva dell'esperienza.
+          </p>
+          <ul>
+            <li>Usa luoghi veri, piazze e monumenti per costruire dinamiche piu memorabili.</li>
+            <li>Unisce intrattenimento e contesto storico, evitando l'ennesimo formato generico.</li>
+            <li>Dimostra che il prodotto digitale puo essere anche culturale, non solo competitivo.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <section class="section" aria-label="Servizi e approccio">
       <div class="section-heading">
         <div>
           <span class="pill">Cosa facciamo</span>
-          <h2>Servizi che nascono dalla pratica sui nostri prodotti.</h2>
+          <h2>Competenze costruite mentre sviluppiamo prodotti reali.</h2>
         </div>
         <p>
-          Ogni progetto interno diventa anche un banco di prova: ci aiuta a definire processi, design, tono di voce e soluzioni tecniche da applicare altrove.
+          Ogni progetto interno diventa un banco di prova per interfacce, logiche di prodotto, contenuti e strumenti digitali applicabili anche a nuove collaborazioni.
         </p>
       </div>
 
       <div class="service-grid">
         <article class="card">
           <h3>Sviluppo web</h3>
-          <p>Siti e landing page veloci, responsive e pensati per raccontare bene un prodotto o convertire un interesse in contatto.</p>
+          <p>Siti e landing page veloci, responsive e pensati per spiegare bene un prodotto, un servizio o una nuova iniziativa.</p>
         </article>
         <article class="card">
           <h3>Prodotti digitali</h3>
-          <p>Progettazione di strumenti online con una struttura chiara, una UX pulita e una strategia orientata al rilascio.</p>
+          <p>Progettazione di strumenti online con una struttura chiara, una UX pulita e una logica orientata all'utilita reale.</p>
         </article>
         <article class="card">
-          <h3>Brand identity digitale</h3>
-          <p>Direzione visiva, tono e presenza online coerente per chi vuole apparire solido fin dal primo impatto.</p>
+          <h3>Esperienza e posizionamento</h3>
+          <p>Direzione visiva, tono e struttura narrativa per presentare un progetto in modo piu solido, leggibile e credibile.</p>
         </article>
       </div>
     </section>
@@ -433,31 +492,31 @@
       <div class="section-heading">
         <div>
           <span class="pill">Metodo</span>
-          <h2>Un progetto nuovo ha bisogno di narrazione, non solo di codice.</h2>
+          <h2>Un progetto nuovo ha bisogno di comprensione del problema, non solo di codice.</h2>
         </div>
         <p>
-          Per questo la landing racconta non solo cosa fai, ma dove stai andando: una base credibile per chi scopre il brand oggi e vuole seguirne la crescita.
+          Per questo la landing non racconta solo cosa stiamo costruendo, ma da dove nasce l'idea e quale frizione concreta vuole risolvere.
         </p>
       </div>
 
       <div class="story-grid">
         <article class="card">
           <h3>Visione</h3>
-          <p>Ogni progetto viene costruito con l'idea di diventare riconoscibile, non soltanto funzionale.</p>
+          <p>Ogni prodotto nasce da un'esperienza reale del territorio e punta a diventare riconoscibile, non soltanto funzionante.</p>
         </article>
         <article class="card">
           <h3>Esecuzione</h3>
-          <p>Design, contenuti e sviluppo vengono allineati per ottenere una presenza online piu matura fin da subito.</p>
+          <p>Design, contenuti e sviluppo vengono tenuti insieme per trasformare intuizioni pratiche in strumenti digitali comprensibili.</p>
         </article>
         <article class="card">
           <h3>Crescita</h3>
-          <p>La landing puo evolvere insieme allo studio, aggiungendo case study, metriche, demo e nuovi lanci.</p>
+          <p>La piattaforma e la presentazione del brand possono evolvere con nuovi test, partnership, metriche e lanci futuri.</p>
         </article>
       </div>
     </section>
 
     <footer>
-      CRO Labs sviluppa prodotti digitali con focus su turismo, esperienze online e nuove idee da portare sul mercato.
+      CRO Labs sviluppa prodotti digitali partendo da problemi reali di turismo, hospitality e intrattenimento per trasformarli in esperienze piu semplici da vivere.
     </footer>
   </main>
 </body>
